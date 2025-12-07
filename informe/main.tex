@@ -1,28 +1,23 @@
 \documentclass[twocolumn, 10pt, a4paper]{article}
 
-% Paquetes de idioma y codificación
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish, es-tabla]{babel}
 
-% Paquetes de matemáticas y física
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{physics} % Para notación de bra-ket, derivadas, etc.
-\usepackage{bm}      % Para negritas en matemáticas
+\usepackage{physics} 
+\usepackage{bm}      
 
-% Paquetes de gráficos y formato
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{hyperref}
 \usepackage{float}
-\usepackage{booktabs} % Para tablas profesionales
-\usepackage{cite}     % Para gestión de citas
+\usepackage{booktabs} 
+\usepackage{cite}     
 
-% Configuración de márgenes
 \geometry{top=2cm, bottom=2cm, left=1.5cm, right=1.5cm}
 
-% Configuración de hipervínculos
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -45,6 +40,14 @@ El estudio de la termalización en sistemas cuánticos aislados ha cobrado gran 
 
 \vspace{0.2cm}
 \textbf{Palabras clave:} Caos Cuántico, ETH, Modelo de Ising, Diagonalización Exacta, Estadística de Niveles.
+\end{abstract}
+
+\renewcommand{\abstractname}{Abstract} 
+\begin{abstract}
+The study of thermalization in isolated quantum systems has gained significant relevance due to the Eigenstate Thermalization Hypothesis (ETH). Based on the review by D'Alessio et al. (2016), we analyze the connection between quantum chaos and energy level statistics. We identify a pedagogical knowledge gap regarding the explicit visualization of the transition between integrability and chaos in computationally accessible few-body systems. In this work, we reproduce the fundamental concepts of Random Matrix Theory (RMT) and develop a numerical simulation using Exact Diagonalization (ED) of the Ising model with transverse and longitudinal fields. Our results show how the level spacing statistics evolve from a Poisson distribution to a Wigner-Dyson distribution upon breaking integrability, validating the emergence of chaotic behavior even in small systems ($L \le 12$).
+
+\vspace{0.2cm}
+\textbf{Keywords:} Quantum Chaos, ETH, Ising Model, Exact Diagonalization, Level Statistics.
 \end{abstract}
 
 \section{Introducción}
@@ -100,7 +103,6 @@ Para garantizar que las imágenes reflejaran correctamente la física del caos y
 \subsection{Reproducción del Límite Integrable}
 Inicialmente, fijamos $h_z = 0$ y $h_x = 1.0$. En este régimen, el modelo es integrable. La Figura 1 (simulada) muestra la distribución de probabilidad $P(r)$. Observamos una caída exponencial característica de la estadística de Poisson, confirmando que no hay repulsión de niveles. El valor medio calculado fue $\langle r \rangle \approx 0.38 \pm 0.02$, consistente con la teoría.
 
-% Espacio para figura
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{images/1.png}
@@ -113,7 +115,6 @@ Para abordar la brecha de conocimiento, encendemos el campo longitudinal $h_z$. 
 
 En la Figura 2, presentamos el parámetro $\langle r \rangle$ en función de $h_z$ para diferentes tamaños de sistema $L=8, 10, 12$.
 
-% Espacio para figura
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{images/2.png}
@@ -148,7 +149,7 @@ Hemos transformado el conocimiento teórico sobre Caos Cuántico y ETH en una in
 Los autores utilizaron ChatGPT (OpenAI, modelo GPT-4o) para asistencia en la estructuración y redacción del texto del artículo. Asimismo, se declara que el código en Python utilizado para la diagonalización exacta, la implementación de la ruptura de simetrías y la generación de las figuras presentadas fue desarrollado con la asistencia de la Inteligencia Artificial para optimizar el uso de librerías científicas y corregir errores de sintaxis. Todo el contenido científico, la interpretación de los datos y las conclusiones fueron verificados rigurosamente por los autores humanos, quienes asumen plena responsabilidad por la versión final.
 
 \section*{Repositorio de Código}
-El código utilizado para la Diagonalización Exacta y el cálculo de $\langle r \rangle$ está disponible en: \url{https://github.com/usuario/Ising-Chaos-Project}. Citado formalmente como \cite{IsingCode2025}.
+El código utilizado para la Diagonalización Exacta y el cálculo de $\langle r \rangle$ está disponible en: \url{https://github.com/Darkenis065/ETH}. Citado formalmente como \cite{IsingCode2025}.
 
 % Bibliografía
 \begin{thebibliography}{99}
@@ -157,7 +158,7 @@ El código utilizado para la Diagonalización Exacta y el cálculo de $\langle r
 D'Alessio, L., Kafri, Y., Polkovnikov, A., \& Rigol, M. (2016). From quantum chaos and eigenstate thermalization to statistical mechanics and thermodynamics. \textit{Advances in Physics}, 65(3), 239-362.
 
 \bibitem{IsingCode2025}
-Martinez, B., Acuña, S., \& Zamora, J. L. (2025). \textit{Ising Model Exact Diagonalization Tool (v1.0)} [Software]. GitHub. https://github.com/usuario/Ising-Chaos-Project
+Martinez, B., Acuña, S., \& Zamora, J. L. (2025). \textit{Ising Model Exact Diagonalization Tool (v1.0)} [Software]. GitHub. https://github.com/Darkenis065/ETH
 
 \bibitem{Deutsch1991}
 Deutsch, J. M. (1991). Quantum statistical mechanics in a closed system. \textit{Physical Review A}, 43(4), 2046.
